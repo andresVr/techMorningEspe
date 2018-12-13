@@ -3,7 +3,7 @@ __pycache__/
 *$py.class
 
 .env
-venv
+reservationsapp
 .vagrant
 Vagrantfile
 
