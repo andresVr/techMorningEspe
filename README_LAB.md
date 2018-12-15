@@ -27,7 +27,7 @@ pip3 install virtualenv
 Create a virtualenv:
 
 ```
-virtualenv venv
+virtualenv reservation app
 ```
 
 Activate virtualenv:
