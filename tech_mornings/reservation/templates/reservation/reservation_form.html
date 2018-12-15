@@ -1,15 +1,21 @@
 <!--if you want to work with create view tool yu mush add this code to complete the 
 database registration from view-->
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     
     {% for field in form %}
-    <div>
-        <label>{{ field.label_tag }}</label>
+    <div class="form-group">
+        <label class="col-md-4">{{ field.label_tag }}</label>
         <small>{{ field.errors }}</small>
-        <div>{{ field }}</div>
+        <i>{{ field }}</i>
     </div>
     {% endfor %}
-
-    <button type="submit">Create</button>
+    </br>
+    <button class="btn btn-success" type="submit">Create Reservation</button>
 </form>
+{% endblock %}

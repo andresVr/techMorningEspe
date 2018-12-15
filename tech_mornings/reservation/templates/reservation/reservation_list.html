@@ -1,12 +1,13 @@
-
+{% extends 'base.html' %}
 {% block content %}
-    <h2>Reservations "Dios no muere pub"</h2>
-   <div><a href="{% url 'reservation-add' %}">Create reservation</a></div>
+   <h2>Reservations "Dios no muere" </h2>
+   <div><a class="btn btn-primary" href="{% url 'reservation-add' %}">Create reservation</a></div>
+   <br>
    <section>
         {% for reservation in object_list %}
         <!--Notice that you dont need an sql join to obtain the client results,
         is only necesery to wrap object in to model, and you can access to those atributtes-->
-            <h3>Client: {{ reservation.client.name }} {{ reservation.client.last_name }}</h3>
+            <h4>Client: {{ reservation.client.name }} {{ reservation.client.last_name }}</h3>
             <div>Date: {{ reservation.reservation_date }}</div>
             <div>People:{{ reservation.people_quatity }}</div>
         {% endfor %}
