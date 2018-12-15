@@ -20,7 +20,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('reservation/', include('reservation.urls')),
-    path('admin/', admin.site.urls)
+    path('', admin.site.urls)
 ]
 
 # Uncomment this to serve /uploads

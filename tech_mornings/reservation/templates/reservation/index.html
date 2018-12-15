@@ -1,0 +1,23 @@
+<h2>Clients</h2>
+{% if  clients_list%}
+    <table>
+        <tr>
+            <th>IC</th>
+            <th>Client</th>
+            <th>E-mail</th>
+        <tr>
+         {% for client in clients_list %}   
+        <tr> 
+           
+                <td>{{client.identity_card}}</td>
+                <td>{{client.name}} {{client.last_name}}</td>
+                <td>{{client.e_mail}}</td>            
+            
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <h3>Any client are register in the app</h3>
+{% endif %}
+
+ <div><a href="{% url 'reservation-add' %}">Create reservation</a></div>

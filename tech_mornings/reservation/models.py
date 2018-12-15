@@ -29,14 +29,14 @@ class Client(models.Model):
     modify_date = models.DateTimeField('modify at')
 
     def __str__ (self):
-        return self.cli_name
+        return self.name
 
     def was_create_recently(self):
         return self.create_date >= timezone.now()-datetime.timedelta(days=1)
         
 class Reservation(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    reservation_date = models.DateTimeField('reservation date')
+    reservation_date = models.CharField(max_length=50)
     people_quatity = models.IntegerField(default=1)
     menu_type = models.CharField(max_length=50)
     payment_method = models.CharField(max_length=50)
