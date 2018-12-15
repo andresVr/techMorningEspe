@@ -1,11 +1,14 @@
 <h2>Clients</h2>
-{% if  clients_list%}
+<!--validate id the client list is not empty-->
+{% if  clients_list%} 
+<!--there is a table (without CSS style) for the results-->
     <table>
         <tr>
             <th>IC</th>
             <th>Client</th>
             <th>E-mail</th>
         <tr>
+<!--You can use a for secuence from django to present backed object and elements-->
          {% for client in clients_list %}   
         <tr> 
            
@@ -17,7 +20,8 @@
         {% endfor %}
     </table>
 {% else %}
+<!--if client list is empty, return the h3 tag message-->
     <h3>Any client are register in the app</h3>
 {% endif %}
-
+<!--there is a link for reservation add option-->
  <div><a href="{% url 'reservation-add' %}">Create reservation</a></div>
